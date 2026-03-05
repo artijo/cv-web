@@ -1,4 +1,5 @@
 ---
+import "@fontsource-variable/google-sans";
 interface Props {
   title: string;
 }
@@ -31,48 +32,13 @@ const { title } = Astro.props;
     --accent-dark: 30, 64, 175;
     --section-border: #e5e7eb;
   }
-  @font-face {
-    font-family: "line_seed";
-    src: url("/fonts/LineSeed/lineseedsansth_bd-webfont.woff2") format("woff2");
-    font-weight: 700;
-    font-style: normal;
-    font-display: fallback;
-  }
-  @font-face {
-    font-family: "line_seed";
-    src: url("/fonts/LineSeed/lineseedsansth_he-webfont.woff2") format("woff2");
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "line_seed";
-    src: url("/fonts/LineSeed/lineseedsansth_rg-webfont.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "line_seed";
-    src: url("/fonts/LineSeed/lineseedsansth_th-webfont.woff2") format("woff2");
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "line_seed";
-    src: url("/fonts/LineSeed/lineseedsansth_xbd-webfont.woff2") format("woff2");
-    font-weight: 950;
-    font-style: normal;
-    font-display: swap;
-  }
   html {
-    font-family: "line_seed", sans-serif;
+    font-family: "Google Sans Variable", sans-serif;
   }
   body {
-    font-family: "line_seed", sans-serif;
+    font-family: "Google Sans Variable", sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
   }
   h1,
@@ -81,7 +47,7 @@ const { title } = Astro.props;
   h4,
   h5,
   h6 {
-    font-family: "line_seed", sans-serif;
+    font-family: "Google Sans Variable", sans-serif;
     font-weight: 700;
     margin: 0;
   }
