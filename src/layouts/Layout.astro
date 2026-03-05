@@ -1,111 +1,163 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="robots" content="noindex" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<script defer src="https://stats.artijo.com/script.js" data-website-id="f213b9d4-02e8-4dc6-b220-19d28aaa17fe"></script>
-		<title>{title}</title>
-	</head>
-	<body class="dark:text-gray-400 dark:bg-gray-800">
-		<slot />
-	</body>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="CV - Apichai Tinjong" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script
+      defer
+      src="https://stats.artijo.com/script.js"
+      data-website-id="f213b9d4-02e8-4dc6-b220-19d28aaa17fe"></script>
+    <title>{title}</title>
+  </head>
+  <body class="dark:text-gray-300 dark:bg-gray-900 text-gray-800 bg-white">
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	@font-face {
-    font-family: 'line_seed';
-    src: url('/fonts/LineSeed/lineseedsansth_bd-webfont.woff2') format('woff2');
+  :root {
+    --accent: 37, 99, 235;
+    --accent-light: 147, 197, 253;
+    --accent-dark: 30, 64, 175;
+    --section-border: #e5e7eb;
+  }
+  @font-face {
+    font-family: "line_seed";
+    src: url("/fonts/LineSeed/lineseedsansth_bd-webfont.woff2") format("woff2");
     font-weight: 700;
     font-style: normal;
-	font-display: fallback;
-}
-@font-face {
-    font-family: 'line_seed';
-    src: url('/fonts/LineSeed/lineseedsansth_he-webfont.woff2') format('woff2');
+    font-display: fallback;
+  }
+  @font-face {
+    font-family: "line_seed";
+    src: url("/fonts/LineSeed/lineseedsansth_he-webfont.woff2") format("woff2");
     font-weight: 900;
     font-style: normal;
-	font-display: swap;
-
-}
-@font-face {
-    font-family: 'line_seed';
-    src: url('/fonts/LineSeed/lineseedsansth_rg-webfont.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "line_seed";
+    src: url("/fonts/LineSeed/lineseedsansth_rg-webfont.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
-	font-display: swap;
-
-}
-@font-face {
-    font-family: 'line_seed';
-    src: url('/fonts/LineSeed/lineseedsansth_th-webfont.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "line_seed";
+    src: url("/fonts/LineSeed/lineseedsansth_th-webfont.woff2") format("woff2");
     font-weight: 100;
     font-style: normal;
-	font-display: swap;
-
-}
-@font-face {
-    font-family: 'line_seed';
-    src: url('/fonts/LineSeed/lineseedsansth_xbd-webfont.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "line_seed";
+    src: url("/fonts/LineSeed/lineseedsansth_xbd-webfont.woff2") format("woff2");
     font-weight: 950;
     font-style: normal;
-	font-display: swap;
+    font-display: swap;
+  }
+  html {
+    font-family: "line_seed", sans-serif;
+  }
+  body {
+    font-family: "line_seed", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "line_seed", sans-serif;
+    font-weight: 700;
+    margin: 0;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.15rem;
+  }
+  h3 {
+    font-size: 1.05rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  h5 {
+    font-size: 0.95rem;
+  }
+  h6 {
+    font-size: 0.875rem;
+  }
+  a {
+    color: rgb(var(--accent));
+    text-decoration: none;
+  }
+  ul {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+  p {
+    margin: 0.15rem 0;
+  }
 
-}
-	html {
-		font-family: "line_seed", sans-serif;
-	}
-	body{
-		font-family: "line_seed", sans-serif;
-		font-weight: 400;
-		font-size: 16px;
-		line-height: 1.5;
+  /* Section heading style */
+  .section-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid rgb(var(--accent));
+    padding-bottom: 0.2rem;
+    margin-bottom: 0.5rem;
+    color: rgb(var(--accent));
+  }
 
-	}
-	h1,h2,h3,h4,h5,h6{
-		font-family: "line_seed", sans-serif;
-		font-weight: 600;
-	}
-	h1 {
-		font-size: 2.5rem;
-	}
-	h2 {
-		font-size: 2rem;
-	}
-	h3 {
-		font-size: 1.75rem;
-	}
-	h4 {
-		font-size: 1.5rem;
-	}
-	h5 {
-		font-size: 1.25rem;
-	}
-	h6 {
-		font-size: 1rem;
-	}
-	a {
-		color: rgb(var(--accent));
-		text-decoration: none;
-	}
+  /* Print styles - A4 portrait, Thai standard margins (2.54cm / 1 inch) */
+  @media print {
+    @page {
+      size: A4 portrait;
+      margin: 2.54cm;
+    }
+    html,
+    body {
+      width: 210mm;
+      min-height: 297mm;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #000 !important;
+      background: #fff !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .no-print {
+      display: none !important;
+    }
+    .section-title {
+      color: #1e40af !important;
+      border-bottom-color: #1e40af !important;
+    }
+    a {
+      color: #1e40af !important;
+    }
+    .cv-container {
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  }
 </style>

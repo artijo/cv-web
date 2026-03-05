@@ -1,51 +1,41 @@
----
-const nav = [
-    { name: 'Projects(Github)', url: 'https://github.com/artijo' },
-    { name: 'Photo', url: '/img/1672153346631.jpg' },
-]
----
 <header>
-    <div class="lg:flex md:flex items-center justify-between">
-        <div>
-            <h3>Apichai Tinjong</h3>
-            <h5 class="-mt-2">อภิชัย ทินจอง</h5>
-        </div>
-        <p>Web Developer</p>
+  <div class="flex items-start justify-between">
+    <div>
+      <h1 class="text-2xl font-bold leading-tight">Apichai Tinjong</h1>
+      <p class="text-base text-gray-500 dark:text-gray-400 -mt-1">
+        อภิชัย ทินจอง
+      </p>
     </div>
-    
-    <br />
-        <h6>Bachelor of Science Program in Information Technology</h6>
-    <br class="_br"/><br class="_br"/>
-    <nav class="flex gap-4">
-        {nav.map((item, index) => (
-            <a href={item.url}>{item.name}</a>
-        ))}
-        <button>Print</button>
-    </nav>
-    <br class="_br"/>
+    <div class="text-right text-sm mt-1">
+      <p>Email: <a href="mailto:a@artijo.com">a@artijo.com</a></p>
+      <p>
+        GitHub: <a href="https://github.com/artijo" target="_blank"
+          >github.com/artijo</a>
+      </p>
+    </div>
+  </div>
+  <div class="mt-1 mb-3">
+    <p class="text-sm font-semibold text-blue-600 dark:text-blue-400">
+      Fresh Graduate — Full Stack Developer
+    </p>
+  </div>
+  <div class="no-print mb-4">
+    <button
+      id="printBtn"
+      class="px-4 py-1.5 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 transition cursor-pointer"
+      >Print / Save PDF</button
+    >
+  </div>
 </header>
 
-<style lang="scss">
-    a {
-        @apply text-blue-500 dark:text-blue-300;
-    }
+<style>
+  a {
+    @apply text-blue-600 dark:text-blue-300;
+  }
 </style>
 
 <script>
-    // print button
-    document.querySelector('button').addEventListener('click', () => {
-        //disable nav
-        document.querySelector('nav').style.display = 'none';
-        // disable class _be
-        (document.querySelector('._br') as HTMLElement).style.display = 'none';
-        //print page size A4
-        document.body.style.width = '210mm';
-        document.body.style.height = '297mm';
-        window.print();
-        //enable nav
-        document.querySelector('nav').style.display = 'flex';
-        // enable class _be
-        (document.querySelector('._br') as HTMLElement).style.display = 'block';
-
-    });
+  document.getElementById("printBtn")?.addEventListener("click", () => {
+    window.print();
+  });
 </script>
